@@ -18,6 +18,7 @@ const requests = {
     fetchTradeBal: `/BOPGSTB.json?api_key=${API_KEY}`,
     fetchSurplusOrDeficit: `/FRED/FYFSD.json?api_key=${API_KEY}`,
     fecthGdp: `/FRED/GDP.json?api_key=${API_KEY}`,
+    fetchCpi: `/FRED/CPIAUCSL.json?api_key=jfSykW9Vcs-nK_1XMffy`,
     fetchPpi: `/FRED/PPIACO.json?api_key=${API_KEY}`,
     
 }
