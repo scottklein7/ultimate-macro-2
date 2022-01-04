@@ -1,12 +1,14 @@
 import React from 'react'
+import '../App.css'
+
 
 function Banking({ fedBal1, fedBal2, check1, check2, m21, m22, 
     rrp1, rrp2, bankR1, bankR2, ffr1, ffr2 }) {
     return (
-        <>
+        <> 
             <article className="bankingArticle">
-                <div className='bankingDiv'>
-                    <h3>Banking</h3>
+            <h2>Banking</h2>
+                <div className='bankingDiv2'>
                     <ul className='bankingUl'>
                         <li className='bankingLi'>Current: ${fedBal1} Previous Month: ${fedBal2}</li>
                         <li className='bankingLi'>Current: ${check1} Previous Month: ${check2}</li>

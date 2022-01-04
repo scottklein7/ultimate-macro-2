@@ -1,38 +1,104 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Source+Code+Pro:wght@200&display=swap');
+
+h2 {
+  font: 16px Source code pro, sans-seriff;
+  color: #53A857;
+  font-weight: bolder;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ul {
+  list-style-type: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: rgb(113, 106, 137);
+  background: linear-gradient(90deg, rgba(113, 106, 137, 1) 0%, rgba(68, 65, 92, 1) 100%);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.mainFlex {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 10px;
+  width: 90%;
+  background: rgb(98, 90, 113);
+  background: linear-gradient(90deg, rgba(98, 90, 113, 1) 0%, rgba(44, 43, 59, 1) 100%);
+  border-radius: 12px;
 }
 
-.App-link {
-  color: #61dafb;
+.topSection {
+  display: flex;
+  height: 30vh;
+  margin-bottom: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bottomSection {
+  display: flex;
+  height: 45vh;
+  background: rgb(50, 60, 72);
+  background: linear-gradient(90deg, rgba(50, 60, 72, 1) 0%, rgba(34, 34, 44, 1) 100%);
+  border-radius: 12px;
+  color: rgb(207, 210, 212);
 }
+
+.assetsDiv1,
+.yieldsDiv1,
+.cpiDiv1 {
+  display: flex;
+  border-radius: 12px;
+  border: 1px solid black;
+  margin-left: 20px;
+}
+
+.fiscalDiv1,
+.bankingDiv1 {
+  display: flex;
+  border-radius: 12px;
+  border: 1px solid white;
+  margin-left: 20px;
+}
+
+.assetsDiv1 {
+  color: rgb(204, 192, 192);
+  background: rgb(74, 76, 91);
+  background: linear-gradient(90deg, rgba(74, 76, 91, 1) 0%, rgba(51, 61, 73, 1) 100%);
+  border-radius: 12px;
+  margin-left: 0px;
+}
+
+.yieldsDiv1 {
+  color: rgb(240, 212, 212);
+  background: rgb(50, 58, 68);
+  background: linear-gradient(90deg, rgba(50, 58, 68, 1) 0%, rgba(30, 34, 46, 1) 100%);
+}
+
+.yieldsDiv1:hover  {
+  transform: scale(1.10);
+  opacity: 1;
+}
+
+.cpiDiv1 {
+  color: rgb(161, 153, 153);
+  background: rgb(36, 40, 51);
+  background: linear-gradient(90deg, rgba(36, 40, 51, 1) 0%, rgba(34, 34, 44, 1) 100%);
+  margin-right: 0px;
+}
+
+.assetsArticle,
+.yieldArticle {
+  margin-left: 10px;
+}
+

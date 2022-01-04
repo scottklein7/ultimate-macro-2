@@ -6,6 +6,7 @@ import Assets from './Assets';
 import Yields from './Yields';
 import Cpi from './Cpi';
 import Banking from './Banking';
+import Fiscal from './Fiscal';
 
 function Home() {
     const [loading, setLoading] = useState(true)
@@ -37,6 +38,14 @@ function Home() {
     const [bankR2, setBankR2] = useState(null)
     const [ffr1, setFfr1] = useState(null)
     const [ffr2, setFfr2] = useState(null)
+    const [debtGdp1, setDebtGdp1] = useState(null)
+    const [debtGdp2, setDebtGdp2] = useState(null)
+    const [tradeBal1, setTradeBal1] = useState(null)
+    const [tradeBal2, setTradeBal2] = useState(null)
+    const [sod1, setSod1] = useState(null)
+    const [sod2, setSod2] = useState(null)
+    const [gdp1, setGdp1] = useState(null)
+    const [gdp2, setGdp2] = useState(null)
 
 
     const sendData = async () => {
@@ -119,7 +128,26 @@ function Home() {
             setFfr2(data.data.dataset.data[30][1])
             return (ffr1, ffr2)
         })
-
+        await axios.get(requests.fecthDebtToGdp).then(data => {
+            setDebtGdp1(Math.round(data.data.dataset.data[0][1]))
+            setDebtGdp2(Math.round(data.data.dataset.data[1][1]))
+            return (debtGdp1, debtGdp2)
+        })
+        await axios.get(requests.fetchTradeBal).then(data => {
+            setTradeBal1((data.data.dataset.data[0][1] * 1000000).toLocaleString("en-US"))
+            setTradeBal2((data.data.dataset.data[1][1] * 1000000).toLocaleString("en-US"))
+            return (tradeBal1, tradeBal2)
+        })
+        await axios.get(requests.fetchSurplusOrDeficit).then(data => {
+            setSod1((data.data.dataset.data[0][1] * 1000000).toLocaleString("en-US"))
+            setSod2((data.data.dataset.data[1][1] * 1000000).toLocaleString("en-US"))
+            return (sod1, sod2)
+        })
+        await axios.get(requests.fecthGdp).then(data => {
+            setGdp1((data.data.dataset.data[0][1] * 1000000).toLocaleString("en-US"))
+            setGdp2((data.data.dataset.data[1][1] * 1000000).toLocaleString("en-US"))
+            return (gdp1, gdp2)
+        })
 
 
     }
@@ -138,18 +166,32 @@ function Home() {
 
 
     return (
-        <div className="App">
-            <Assets btc1={btc1} btc2={btc2} gas1={gas1} gas2={gas2} 
-            oil1={oil1} oil2={oil2} gold1={gold1} gold2={gold2} />
+        <main className="mainFlex">
 
-            <Yields tbond1={tbond1} tbond2={tbond2} aaaBond1={aaaBond1} aaaBond2={aaaBond2} />
-
-            < Cpi cpi1={cpi1} cpi2={cpi2} ppi1={ppi1} ppi2={ppi2} />
-
-            < Banking fedBal1={fedBal1} fedBal2={fedBal2} check1={check1} 
-            check2={check2} m21={m21} m22={m22} rrp1={rrp1} rrp2={rrp2}
-            bankR1={bankR1} bankR2={bankR2} ffr1={ffr1} ffr2={ffr2} />
-        </div>
+            <section className="topSection">
+                <div className="assetsDiv1">
+                    <Assets btc1={btc1} btc2={btc2} gas1={gas1} gas2={gas2}
+                        oil1={oil1} oil2={oil2} gold1={gold1} gold2={gold2} />
+                </div>
+                <div className="yieldsDiv1">
+                    <Yields tbond1={tbond1} tbond2={tbond2} aaaBond1={aaaBond1} aaaBond2={aaaBond2} />
+                </div>
+                <div className="cpiDiv1">
+                    < Cpi cpi1={cpi1} cpi2={cpi2} ppi1={ppi1} ppi2={ppi2} />
+                </div>
+            </section>
+            <section className="bottomSection">
+                <div className="bankingDiv1">
+                    < Banking fedBal1={fedBal1} fedBal2={fedBal2} check1={check1}
+                        check2={check2} m21={m21} m22={m22} rrp1={rrp1} rrp2={rrp2}
+                        bankR1={bankR1} bankR2={bankR2} ffr1={ffr1} ffr2={ffr2} />
+                </div>
+                <div className="fiscalDiv1">
+                    <Fiscal debtGdp1={debtGdp1} debtGdp2={debtGdp2} tradeBal1={tradeBal1} tradeBal2={tradeBal2}
+                        sod1={sod1} sod2={sod2} gdp1={gdp1} gdp2={gdp2} />
+                </div>
+            </section>
+        </main>
     );
 }
 export default Home
