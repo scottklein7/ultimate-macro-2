@@ -33,8 +33,10 @@ function Home() {
     const [m22, setM22] = useState(null)
     const [rrp1, setRrp1] = useState(null)
     const [rrp2, setRrp2] = useState(null)
-
-
+    const [bankR1, setBankR1] = useState(null)
+    const [bankR2, setBankR2] = useState(null)
+    const [ffr1, setFfr1] = useState(null)
+    const [ffr2, setFfr2] = useState(null)
 
 
     const sendData = async () => {
@@ -107,6 +109,16 @@ function Home() {
             setRrp2((data.data.dataset.data[20][1] * 1000000).toLocaleString("en-US"))
             return (rrp1, rrp2)
         })
+        await axios.get(requests.fecthBankReserves).then(data => {
+            setBankR1((data.data.dataset.data[0][1] * 1000000).toLocaleString("en-US"))
+            setBankR2((data.data.dataset.data[1][1] * 1000000).toLocaleString("en-US"))
+            return (bankR1, bankR2)
+        })
+        await axios.get(requests.fetchFfr).then(data => {
+            setFfr1(data.data.dataset.data[0][1])
+            setFfr2(data.data.dataset.data[30][1])
+            return (ffr1, ffr2)
+        })
 
 
 
@@ -127,10 +139,16 @@ function Home() {
 
     return (
         <div className="App">
-            <Assets btc1={btc1} btc2={btc2} gas1={gas1} gas2={gas2} oil1={oil1} oil2={oil2} gold1={gold1} gold2={gold2} />
+            <Assets btc1={btc1} btc2={btc2} gas1={gas1} gas2={gas2} 
+            oil1={oil1} oil2={oil2} gold1={gold1} gold2={gold2} />
+
             <Yields tbond1={tbond1} tbond2={tbond2} aaaBond1={aaaBond1} aaaBond2={aaaBond2} />
+
             < Cpi cpi1={cpi1} cpi2={cpi2} ppi1={ppi1} ppi2={ppi2} />
-            < Banking fedBal1={fedBal1} fedBal2={fedBal2} check1={check1} check2={check2} m21={m21} m22={m22} rrp1={rrp1} rrp2={rrp2} />
+
+            < Banking fedBal1={fedBal1} fedBal2={fedBal2} check1={check1} 
+            check2={check2} m21={m21} m22={m22} rrp1={rrp1} rrp2={rrp2}
+            bankR1={bankR1} bankR2={bankR2} ffr1={ffr1} ffr2={ffr2} />
         </div>
     );
 }
