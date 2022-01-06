@@ -9,144 +9,146 @@ import Banking from './Banking';
 import Fiscal from './Fiscal';
 
 function Home() {
+    const [apiData, setApiData] = useState({
+        btc1: null,
+        btc2: null,
+        oil1: null,
+        oil2: null,
+        gas1: null,
+        gas2: null,
+        tbond1: null,
+        tbond2: null,
+        aaaBond1: null,
+        aaaBond2: null,
+        cpi1: null,
+        cpi2: null,
+        ppi1: null,
+        ppi2: null,
+        fedBal1: null,
+        fedBal2: null,
+        check1: null,
+        check2: null,
+        m21: null,
+        m22: null,
+        rrp1: null,
+        rrp2: null,
+        bankR1: null,
+        bankR2: null,
+        ffr1: null,
+        ffr2: null,
+        debtGdp1: null,
+        debtGdp2: null,
+        tradeBal1: null,
+        tradeBal2: null,
+        sod1: null,
+        sod2: null,
+        gdp1: null,
+        gdp2: null
+    })
+
     const [loading, setLoading] = useState(true)
-    const [btc1, setBtc1] = useState(null)
-    const [btc2, setBtc2] = useState(null)
-    const [oil1, setOil1] = useState(null)
-    const [oil2, setOil2] = useState(null)
-    const [gas1, setGas1] = useState(null)
-    const [gas2, setGas2] = useState(null)
-    const [gold1, setGold1] = useState(null)
-    const [gold2, setGold2] = useState(null)
-    const [tbond1, setTbond1] = useState(null)
-    const [tbond2, setTbond2] = useState(null)
-    const [aaaBond1, setAaaBond1] = useState(null)
-    const [aaaBond2, setAaaBond2] = useState(null)
-    const [cpi1, setCpi1] = useState(null)
-    const [cpi2, setCpi2] = useState(null)
-    const [ppi1, setPpi1] = useState(null)
-    const [ppi2, setPpi2] = useState(null)
-    const [fedBal1, setFedBal1] = useState(null)
-    const [fedBal2, setFedBal2] = useState(null)
-    const [check1, setCheck1] = useState(null)
-    const [check2, setCheck2] = useState(null)
-    const [m21, setM21] = useState(null)
-    const [m22, setM22] = useState(null)
-    const [rrp1, setRrp1] = useState(null)
-    const [rrp2, setRrp2] = useState(null)
-    const [bankR1, setBankR1] = useState(null)
-    const [bankR2, setBankR2] = useState(null)
-    const [ffr1, setFfr1] = useState(null)
-    const [ffr2, setFfr2] = useState(null)
-    const [debtGdp1, setDebtGdp1] = useState(null)
-    const [debtGdp2, setDebtGdp2] = useState(null)
-    const [tradeBal1, setTradeBal1] = useState(null)
-    const [tradeBal2, setTradeBal2] = useState(null)
-    const [sod1, setSod1] = useState(null)
-    const [sod2, setSod2] = useState(null)
-    const [gdp1, setGdp1] = useState(null)
-    const [gdp2, setGdp2] = useState(null)
+
 
 
     const sendData = async () => {
 
         await axios.get(requests.fetchBtc).then(data => {
-            setBtc1(data.data.dataset.data[0][1].toLocaleString('en-US'))
-            setBtc2(data.data.dataset.data[30][4].toLocaleString('en-US'))
-            return (btc1, btc2)
+            setApiData({ ...apiData, btc1: data.data.dataset.data[0][1].toLocaleString('en-US') })
+            setApiData({ ...apiData, btc2: data.data.dataset.data[30][4].toLocaleString('en-US') })
+            return (apiData.btc1, apiData.btc2)
         })
 
         await axios.get(requests.fetchOil).then(data => {
-            setOil1(data.data.dataset.data[0][1])
-            setOil2(data.data.dataset.data[21][1])
-            return (oil1, oil2)
+            setApiData({ ...apiData, oil1: data.data.dataset.data[0][1] })
+            setApiData({ ...apiData, oil2: data.data.dataset.data[21][1] })
+            return (apiData.oil1, apiData.oil2)
         })
 
         await axios.get(requests.fetchGas).then(data => {
-            setGas1(data.data.dataset.data[0][1])
-            setGas2(data.data.dataset.data[5][1])
-            return (gas1, gas2)
+            setApiData({ ...apiData, gas1: data.data.dataset.data[0][1] })
+            setApiData({ ...apiData, gas2: data.data.dataset.data[5][1] })
+            return (apiData.gas1, apiData.gas2)
         })
 
         await axios.get(requests.fecthGold).then(data => {
-            setGold1(data.data.dataset.data[0][1].toLocaleString('en-US'))
-            setGold2(data.data.dataset.data[22][1].toLocaleString('en-US'))
-            return (gold1, gold2)
+            setApiData({ ...apiData, gold1: data.data.dataset.data[0][1].toLocaleString('en-US') })
+            setApiData({ ...apiData, gold2: data.data.dataset.data[22][1].toLocaleString('en-US') })
+            return (apiData.gold1, apiData.gold2)
         })
 
         await axios.get(requests.fecthTBond).then(data => {
-            setTbond1(data.data.dataset.data[0][10].toLocaleString('en-US'))
-            setTbond2(data.data.dataset.data[20][10].toLocaleString('en-US'))
-            return (tbond1, tbond2)
+            setApiData({ ...apiData, tbond1: data.data.dataset.data[0][10].toLocaleString('en-US') })
+            setApiData({ ...apiData, tbond2: data.data.dataset.data[20][10].toLocaleString('en-US') })
+            return (apiData.tbond1, apiData.tbond2)
         })
 
         await axios.get(requests.fecthAaaYield).then(data => {
-            setAaaBond1(data.data.dataset.data[0][1].toLocaleString('en-US'))
-            setAaaBond2(data.data.dataset.data[21][1].toLocaleString('en-US'))
-            return (aaaBond1, aaaBond2)
+            setApiData({ ...apiData, aaaBond1: data.data.dataset.data[0][1].toLocaleString('en-US') })
+            setApiData({ ...apiData, aaaBond2: data.data.dataset.data[21][1].toLocaleString('en-US') })
+            return (apiData.aaaBond1, apiData.aaaBond2)
         })
 
         await axios.get(requests.fetchCpi).then(data => {
-            setCpi1(data.data.dataset.data[0][1])
-            setCpi2(data.data.dataset.data[12][1])
-            return (cpi1, cpi2)
+            setApiData({ ...apiData, cpi1: data.data.dataset.data[0][1] })
+            setApiData({ ...apiData, cpi2: data.data.dataset.data[12][1] })
+            return (apiData.cpi1, apiData.cpi2)
         })
 
         await axios.get(requests.fetchPpi).then(data => {
-            setPpi1(data.data.dataset.data[0][1])
-            setPpi2(data.data.dataset.data[12][1])
-            return (ppi1, ppi2)
+            setApiData({ ...apiData, ppi1: data.data.dataset.data[0][1] })
+            setApiData({ ...apiData, ppi2: data.data.dataset.data[12][1] })
+            return (apiData.ppi1, apiData.ppi2)
         })
 
         await axios.get(requests.fecthFedBal).then(data => {
-            setFedBal1((data.data.dataset.data[0][1] * 1000000).toLocaleString("en-US"))
-            setFedBal2((data.data.dataset.data[4][1] * 1000000).toLocaleString("en-US"))
-            return (fedBal1, fedBal2)
+            setApiData({ ...apiData, fedBal1: (data.data.dataset.data[0][1] * 1000000).toLocaleString("en-US") })
+            setApiData({ ...apiData, fedBal2: (data.data.dataset.data[4][1] * 1000000).toLocaleString("en-US") })
+            return (apiData.fedBal1, apiData.fedBal2)
         })
         await axios.get(requests.fetchCheckDeposit).then(data => {
-            setCheck1((data.data.dataset.data[0][1] * 1000000).toLocaleString("en-US"))
-            setCheck2((data.data.dataset.data[1][1] * 1000000).toLocaleString("en-US"))
-            return (check1, check2)
+            setApiData({ ...apiData, check1: (data.data.dataset.data[0][1] * 1000000).toLocaleString("en-US") })
+            setApiData({ ...apiData, check2: (data.data.dataset.data[1][1] * 1000000).toLocaleString("en-US") })
+            return (apiData.check1, apiData.check2)
         })
         await axios.get(requests.fecthM2).then(data => {
-            setM21((data.data.dataset.data[0][1] * 1000000).toLocaleString("en-US"))
-            setM22((data.data.dataset.data[1][1] * 1000000).toLocaleString("en-US"))
-            return (m21, m22)
+            setApiData({ ...apiData, m21: (data.data.dataset.data[0][1] * 1000000).toLocaleString("en-US") })
+            setApiData({ ...apiData, m22: (data.data.dataset.data[1][1] * 1000000).toLocaleString("en-US") })
+            return (apiData.m21, apiData.m22)
         })
         await axios.get(requests.fetchReverseRepo).then(data => {
-            setRrp1((data.data.dataset.data[0][1] * 1000000).toLocaleString("en-US"))
-            setRrp2((data.data.dataset.data[20][1] * 1000000).toLocaleString("en-US"))
-            return (rrp1, rrp2)
+            setApiData({ ...apiData, rrp1: (data.data.dataset.data[0][1] * 1000000).toLocaleString("en-US") })
+            setApiData({ ...apiData, rrp2: (data.data.dataset.data[20][1] * 1000000).toLocaleString("en-US") })
+            return (apiData.rrp1, apiData.rrp2)
         })
         await axios.get(requests.fecthBankReserves).then(data => {
-            setBankR1((data.data.dataset.data[0][1] * 1000000).toLocaleString("en-US"))
-            setBankR2((data.data.dataset.data[1][1] * 1000000).toLocaleString("en-US"))
-            return (bankR1, bankR2)
+            setApiData({ ...apiData, bankR1: (data.data.dataset.data[0][1] * 1000000).toLocaleString("en-US") })
+            setApiData({ ...apiData, bankR2: (data.data.dataset.data[1][1] * 1000000).toLocaleString("en-US") })
+            return (apiData.bankR1, apiData.bankR2)
         })
         await axios.get(requests.fetchFfr).then(data => {
-            setFfr1(data.data.dataset.data[0][1])
-            setFfr2(data.data.dataset.data[30][1])
-            return (ffr1, ffr2)
+            setApiData({ ...apiData, ffr1: data.data.dataset.data[0][1] })
+            setApiData({ ...apiData, ffr2: data.data.dataset.data[30][1] })
+            return (apiData.ffr1, apiData.ffr2)
         })
         await axios.get(requests.fecthDebtToGdp).then(data => {
-            setDebtGdp1(Math.round(data.data.dataset.data[0][1]))
-            setDebtGdp2(Math.round(data.data.dataset.data[1][1]))
-            return (debtGdp1, debtGdp2)
+            setApiData({ ...apiData, debtGdp1: Math.round(data.data.dataset.data[0][1]) })
+            setApiData({ ...apiData, debtGdp2: Math.round(data.data.dataset.data[1][1]) })
+            return (apiData.debtGdp1, apiData.debtGdp2)
         })
         await axios.get(requests.fetchTradeBal).then(data => {
-            setTradeBal1((data.data.dataset.data[0][1] * 1000000).toLocaleString("en-US"))
-            setTradeBal2((data.data.dataset.data[1][1] * 1000000).toLocaleString("en-US"))
-            return (tradeBal1, tradeBal2)
+            setApiData({ ...apiData, tradeBal1: (data.data.dataset.data[0][1] * 1000000).toLocaleString("en-US") })
+            setApiData({ ...apiData, tradeBal2: (data.data.dataset.data[1][1] * 1000000).toLocaleString("en-US") })
+            return (apiData.tradeBal1, apiData.tradeBal2)
         })
         await axios.get(requests.fetchSurplusOrDeficit).then(data => {
-            setSod1((data.data.dataset.data[0][1] * 1000000).toLocaleString("en-US"))
-            setSod2((data.data.dataset.data[1][1] * 1000000).toLocaleString("en-US"))
-            return (sod1, sod2)
+            setApiData({ ...apiData, sod1: (data.data.dataset.data[0][1] * 1000000).toLocaleString("en-US") })
+            setApiData({ ...apiData, sod2: (data.data.dataset.data[1][1] * 1000000).toLocaleString("en-US") })
+            return (apiData.sod1, apiData.sod2)
         })
         await axios.get(requests.fecthGdp).then(data => {
-            setGdp1((data.data.dataset.data[0][1] * 1000000).toLocaleString("en-US"))
-            setGdp2((data.data.dataset.data[1][1] * 1000000).toLocaleString("en-US"))
-            return (gdp1, gdp2)
+            setApiData({ ...apiData, gdp1: (data.data.dataset.data[0][1] * 1000000).toLocaleString("en-US") })
+            setApiData({ ...apiData, gdp2: (data.data.dataset.data[1][1] * 1000000).toLocaleString("en-US") })
+            return (apiData.gdp1, apiData.gdp2)
         })
 
 
@@ -170,25 +172,25 @@ function Home() {
 
             <section className="topSection">
                 <div className="assetsDiv1">
-                    <Assets btc1={btc1} btc2={btc2} gas1={gas1} gas2={gas2}
-                        oil1={oil1} oil2={oil2} gold1={gold1} gold2={gold2} />
+                    <Assets btc1={apiData.btc1} btc2={apiData.btc2} gas1={apiData.gas1} gas2={apiData.gas2}
+                        oil1={apiData.oil1} oil2={apiData.oil2} gold1={apiData.gold1} gold2={apiData.gold2} />
                 </div>
                 <div className="yieldsDiv1">
-                    <Yields tbond1={tbond1} tbond2={tbond2} aaaBond1={aaaBond1} aaaBond2={aaaBond2} />
+                    <Yields tbond1={apiData.tbond1} tbond2={apiData.tbond2} aaaBond1={apiData.aaaBond1} aaaBond2={apiData.aaaBond2} />
                 </div>
                 <div className="cpiDiv1">
-                    < Cpi cpi1={cpi1} cpi2={cpi2} ppi1={ppi1} ppi2={ppi2} />
+                    < Cpi cpi1={apiData.cpi1} cpi2={apiData.cpi2} ppi1={apiData.ppi1} ppi2={apiData.ppi2} />
                 </div>
             </section>
             <section className="bottomSection">
                 <div className="bankingDiv1">
-                    < Banking fedBal1={fedBal1} fedBal2={fedBal2} check1={check1}
-                        check2={check2} m21={m21} m22={m22} rrp1={rrp1} rrp2={rrp2}
-                        bankR1={bankR1} bankR2={bankR2} ffr1={ffr1} ffr2={ffr2} />
+                    < Banking fedBal1={apiData.fedBal1} fedBal2={apiData.fedBal2} check1={apiData.check1}
+                        check2={apiData.check2} m21={apiData.m21} m22={apiData.m22} rrp1={apiData.rrp1} rrp2={apiData.rrp2}
+                        bankR1={apiData.bankR1} bankR2={apiData.bankR2} ffr1={apiData.ffr1} ffr2={apiData.ffr2} />
                 </div>
                 <div className="fiscalDiv1">
-                    <Fiscal debtGdp1={debtGdp1} debtGdp2={debtGdp2} tradeBal1={tradeBal1} tradeBal2={tradeBal2}
-                        sod1={sod1} sod2={sod2} gdp1={gdp1} gdp2={gdp2} />
+                    <Fiscal debtGdp1={apiData.debtGdp1} debtGdp2={apiData.debtGdp2} tradeBal1={apiData.tradeBal1} tradeBal2={apiData.tradeBal2}
+                        sod1={apiData.sod1} sod2={apiData.sod2} gdp1={apiData.gdp1} gdp2={apiData.gdp2} />
                 </div>
             </section>
         </main>

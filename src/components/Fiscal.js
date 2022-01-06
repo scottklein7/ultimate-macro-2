@@ -5,14 +5,18 @@ import '../App.css'
 function Fiscal({ debtGdp1, debtGdp2, tradeBal1, tradeBal2, sod1, sod2, gdp1, gdp2 }) {
     return (
         <>
-        <article className="assetsArticle">
+        <article className="fiscalArticle">
         <h2>Fiscal</h2>
-            <div className='assetsDiv2'>
-                <ul className='assetsUl'>
-                    <li className='assetsLi'>Current: {debtGdp1}% Previous Month: {debtGdp2}%</li>
-                    <li className='assetsLi'>Current: ${tradeBal1} Previous Month: ${tradeBal2}</li>
-                    <li className='assetsLi'>Current: ${sod1} Previous Month: ${sod2}</li>
-                    <li className='assetsLi'>Current: ${gdp1} Previous Month: ${gdp2}</li>
+            <div className='fiscalDiv2'>
+                <ul className='fiscalUl'>
+                    <span>Debt:GDP</span>
+                    <li className='fiscalLi'>Current: {debtGdp1}% Previous Month: {debtGdp2}%</li>
+                    <span>Trade Balance</span>
+                    <li className='fiscalLi'>Current: ${tradeBal1} Previous Month: ${tradeBal2}</li>
+                    <span>Monthly Surplus/Deficit</span>
+                    <li className='fiscalLi'>Current: ${sod1} Previous Month: ${sod2}</li>
+                    <span>GDP</span>
+                    <li className='fiscali'>Current: ${gdp1} Previous Month: ${gdp2}</li>
                     {/* <img src="https://fred.stlouisfed.org/graph/fredgraph.png?g=KvuD" alt="" /> */}
                 </ul>
             </div>
