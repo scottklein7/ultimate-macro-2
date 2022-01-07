@@ -198,7 +198,7 @@ function Home() {
 
     return (
         <main className="mainFlex">
-            {loading ? <div style={{ color: 'white' }} >hold on we are fecthing some data! Dont you gotta wait for greatness....</div> :
+            {loading ? <div style={{ color: 'white' }} >Hold on we are fecthing some data! Dont you know you gotta wait for greatness....</div> :
                 <>
                     <section className="topSection">
                         <div className="assetsDiv1">
