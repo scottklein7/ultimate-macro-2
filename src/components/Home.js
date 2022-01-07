@@ -9,46 +9,45 @@ import Banking from './Banking';
 import Fiscal from './Fiscal';
 
 function Home() {
-    const [apiData, setApiData] = useState({
-        btc1: null,
-        btc2: null,
-        oil1: null,
-        oil2: null,
-        gas1: null,
-        gas2: null,
-        tbond1: null,
-        tbond2: null,
-        aaaBond1: null,
-        aaaBond2: null,
-        cpi1: null,
-        cpi2: null,
-        ppi1: null,
-        ppi2: null,
-        fedBal1: null,
-        fedBal2: null,
-        check1: null,
-        check2: null,
-        m21: null,
-        m22: null,
-        rrp1: null,
-        rrp2: null,
-        bankR1: null,
-        bankR2: null,
-        ffr1: null,
-        ffr2: null,
-        debtGdp1: null,
-        debtGdp2: null,
-        tradeBal1: null,
-        tradeBal2: null,
-        sod1: null,
-        sod2: null,
-        gdp1: null,
-        gdp2: null
-    })
+    const [apiData, setApiData] = useState([
+
+        {btc1: null},
+        {btc2: null},
+        {oil1: null},
+        {oil2: null},
+        {gas1: null},
+        {gas2: null},
+        {tbond1: null},
+        {tbond2: null},
+        {aaaBond1: null},
+        {aaaBond2: null},
+        {cpi1: null},
+        {cpi2: null},
+        {ppi1: null},
+        {ppi2: null},
+        {fedBal1: null},
+        {fedBal2: null},
+        {check1: null},
+        {check2: null},
+        {m21: null},
+        {m22: null},
+        {rrp1: null},
+        {rrp2: null},
+        {bankR1: null},
+        {bankR2: null},
+        {ffr1: null},
+        {ffr2: null},
+        {debtGdp1: null},
+        {debtGdp2: null},
+        {tradeBal1: null},
+        {tradeBal2: null},
+        {sod1: null},
+        {sod2: null},
+        {gdp1: null},
+        {gdp2: null}
+    ])
 
     const [loading, setLoading] = useState(true)
-
-
 
     const sendData = async () => {
 
@@ -167,33 +166,33 @@ function Home() {
     }, [])
 
 
-    return (
-        <main className="mainFlex">
 
+
+    return (
+
+
+        <main className="mainFlex">
             <section className="topSection">
                 <div className="assetsDiv1">
-                    <Assets btc1={apiData.btc1} btc2={apiData.btc2} gas1={apiData.gas1} gas2={apiData.gas2}
-                        oil1={apiData.oil1} oil2={apiData.oil2} gold1={apiData.gold1} gold2={apiData.gold2} />
+                    <Assets  {...apiData} />
                 </div>
                 <div className="yieldsDiv1">
-                    <Yields tbond1={apiData.tbond1} tbond2={apiData.tbond2} aaaBond1={apiData.aaaBond1} aaaBond2={apiData.aaaBond2} />
+                    <Yields{...apiData} />
                 </div>
                 <div className="cpiDiv1">
-                    < Cpi cpi1={apiData.cpi1} cpi2={apiData.cpi2} ppi1={apiData.ppi1} ppi2={apiData.ppi2} />
+                    < Cpi{...apiData} />
                 </div>
             </section>
             <section className="bottomSection">
                 <div className="bankingDiv1">
-                    < Banking fedBal1={apiData.fedBal1} fedBal2={apiData.fedBal2} check1={apiData.check1}
-                        check2={apiData.check2} m21={apiData.m21} m22={apiData.m22} rrp1={apiData.rrp1} rrp2={apiData.rrp2}
-                        bankR1={apiData.bankR1} bankR2={apiData.bankR2} ffr1={apiData.ffr1} ffr2={apiData.ffr2} />
+                    < Banking{...apiData} />
                 </div>
                 <div className="fiscalDiv1">
-                    <Fiscal debtGdp1={apiData.debtGdp1} debtGdp2={apiData.debtGdp2} tradeBal1={apiData.tradeBal1} tradeBal2={apiData.tradeBal2}
-                        sod1={apiData.sod1} sod2={apiData.sod2} gdp1={apiData.gdp1} gdp2={apiData.gdp2} />
+                    <Fiscal{...apiData} />
                 </div>
             </section>
         </main>
+
     );
 }
 export default Home

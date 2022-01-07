@@ -1,7 +1,8 @@
 import React from 'react'
 import '../App.css'
 
-function Yields({ tbond1, tbond2, aaaBond1, aaaBond2 }) {
+function Yields(props) {
+    const { tbond1, tbond2, aaaBond1, aaaBond2 } = props
     return (
         <>
             <article className="yieldArticle">

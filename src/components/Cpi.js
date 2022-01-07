@@ -2,7 +2,8 @@ import React from 'react'
 import '../App.css'
 
 
-export default function Cpi({ cpi1, cpi2, ppi1, ppi2 }) {
+export default function Cpi(props) {
+    const { cpi1, cpi2, ppi1, ppi2} = props
     return (
         <>
             <article className="cpiArticle">

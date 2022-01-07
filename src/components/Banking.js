@@ -2,8 +2,8 @@ import React from 'react'
 import '../App.css'
 
 
-function Banking({ fedBal1, fedBal2, check1, check2, m21, m22, 
-    rrp1, rrp2, bankR1, bankR2, ffr1, ffr2 }) {
+function Banking(props) {
+    const { fedBal1, fedBal2, check1, check2, m21, m22, rrp1, rrp2, bankR1, bankR2, ffr1, ffr2 } = props
     return (
         <> 
             <article className="bankingArticle">

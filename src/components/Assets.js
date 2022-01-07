@@ -1,7 +1,8 @@
 import React from 'react'
 import '../App.css'
 
-function Assets({ btc1, btc2, oil1, oil2, gas1, gas2, gold1, gold2 }) {
+function Assets(props) {
+    const { btc1, btc2, oil1, oil2, gas1, gas2, gold1, gold2 } = props
     return (
         <>  
             <article className="assetsArticle">
