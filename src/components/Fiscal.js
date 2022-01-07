@@ -11,13 +11,13 @@ function Fiscal(props) {
             <div className='fiscalDiv2'>
                 <ul className='fiscalUl'>
                     <span>Debt:GDP</span>
-                    <li className='fiscalLi'>Current: {debtGdp1}% Previous Month: {debtGdp2}%</li>
+                    <li className='fiscalLi'>Current: {props.apiData[28].debtGdp1}% Previous Month: {props.apiData[29].debtGdp2}%</li>
                     <span>Trade Balance</span>
-                    <li className='fiscalLi'>Current: ${tradeBal1} Previous Month: ${tradeBal2}</li>
+                    <li className='fiscalLi'>Current: ${props.apiData[30].tradeBal1} Previous Month: ${props.apiData[31].tradeBal2}</li>
                     <span>Monthly Surplus/Deficit</span>
-                    <li className='fiscalLi'>Current: ${sod1} Previous Month: ${sod2}</li>
+                    <li className='fiscalLi'>Current: ${props.apiData[32].sod1} Previous Month: ${props.apiData[33].sod2}</li>
                     <span>GDP</span>
-                    <li className='fiscali'>Current: ${gdp1} Previous Month: ${gdp2}</li>
+                    <li className='fiscali'>Current: ${props.apiData[34].gdp1} Previous Month: ${props.apiData[35].gdp2}</li>
                     {/* <img src="https://fred.stlouisfed.org/graph/fredgraph.png?g=KvuD" alt="" /> */}
                 </ul>
             </div>

@@ -11,9 +11,9 @@ export default function Cpi(props) {
                 <div className='cpiDiv'>
                     <ul className='cpiUl'>
                         <span>CPI</span>
-                        <li className='cpiLi'>Current: {cpi1} Previous Month: {cpi2}</li>
+                        <li className='cpiLi'>Current: {props.apiData[12].cpi1} Previous Month: {props.apiData[13].cpi2}</li>
                         <span>PPI</span>
-                        <li className='cpiLi'>Current: {ppi1} Previous Month: {ppi2}</li>
+                        <li className='cpiLi'>Current: {props.apiData[14].ppi1} Previous Month: {props.apiData[15].ppi2}</li>
                     </ul>
                 </div>
             </article>
