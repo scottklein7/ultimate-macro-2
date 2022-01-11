@@ -7,14 +7,20 @@ export default function Cpi(props) {
     return (
         <>
             <article className="cpiArticle">
-                <h2>Consumer Price Inflation</h2>
+                <h2>Price Inflation</h2>
                 <div className='cpiDiv'>
                     <ul className='cpiUl'>
-                        <span>CPI</span>
-                        <li className='cpiLi'><span className='insideLiSpan1'><b>Current:</b> {props.apiData[12].cpi1}</span> <b>Previous Month:</b> {props.apiData[13].cpi2}</li>
+                        <h3>CPI</h3>
+                        <li className='cpiLi'><span className='insideLiSpan1'><b>Current:</b> {props.apiData[18].cpi1}</span>
+                            <span className='insideLiSpan1'><b>Previous Month:</b> {props.apiData[19].cpi2}</span>
+                            <b>Previous Year:</b> {props.apiData[20].cpi3}
+                        </li>
 
-                        <span>PPI</span>
-                        <li className='cpiLi'><span className='insideLiSpan1'><b>Current:</b> {props.apiData[14].ppi1}</span> <b>Previous Month:</b> {props.apiData[15].ppi2}</li>
+                        <h3>PPI</h3>
+                        <li className='cpiLi'><span className='insideLiSpan1'><b>Current:</b> {props.apiData[21].ppi1}</span>
+                            <span className='insideLiSpan1'><b>Previous Month:</b> {props.apiData[22].ppi2}</span>
+                            <b>Previous Year:</b> {props.apiData[23].ppi3}
+                        </li>
                     </ul>
                 </div>
             </article>

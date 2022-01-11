@@ -1,21 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Source+Code+Pro:wght@200&display=swap');
 
+
+.divHeader {
+  padding: 20px;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+}
+
+.macroh1 {
+  color: #4e8572;
+}
+
 h2 {
-  font: 19px Source code pro, sans-seriff;
+  font: 23.5px Source code pro, sans-seriff;
   color: #53A857;
   font-weight: bolder;
-  margin-left: 1rem;
+  text-align: center;
 }
 
-span {
+h3 {
   font-weight: bolder;
   color: #54AB57;
+  font-size: 17px;
+  margin-bottom: 8px;
 }
+
 .insideLiSpan1 {
   font-weight: normal;
+  font-size: 15px;
   color: rgb(218, 213, 213);
-
-  margin: 0px 20px 0px 0px;
+  margin: 0px 13px 0px 0px;
 }
 
 ul {
@@ -25,24 +41,27 @@ ul {
 }
 
 li {
-  margin-bottom: 15px;
-  margin-top: 5px;
-  font-size: 15px;
+  font-size: 14.5px;
   color: rgb(218, 213, 213);
   border-bottom: 1px solid #585665;
+  margin-bottom: 20px;
 }
-b {
 
-}
 body {
   margin: 0;
-  height: 100vh;
+  /* height: 140vh; */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #222840
+  background-color: #0c0f1b
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 #root {
@@ -58,6 +77,14 @@ main {
   justify-content: space-around;
   padding: 40px;
   border-radius: 5px;
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 540px) {
+  .topSection,
+  .bottomSection {
+    width: 600px;
+  }
 }
 
 .topSection {
@@ -71,22 +98,43 @@ main {
   justify-content: space-around;
 }
 
+@media screen and (max-width: 540px){
+  .topSection {
+    justify-content: space-evenly;
+  }
+}
+
 .assetsDiv1,
 .yieldsDiv1,
 .cpiDiv1 {
   display: flex;
   width: 350px;
   border-radius: 5px;
+  border: 1px solid #3b5049;
 }
+
+@media screen and (max-width: 540px) {
+  .assetsDiv1,
+  .yieldsDiv1,
+  .cpiDiv1 {
+    display: flex;
+    width: 170px;
+    height: 300px;
+    border-radius: 5px;
+    border: 1px solid #3b5049;
+  }
+}
+
 
 .assetsDiv1 {
   margin-left: 0px;
-  background: #18181b;
+  background: #0f0f11;
 }
+
 
 .yieldsDiv1 {
   margin-left: 20px;
-  background: #131527;
+  background: #0c0d18;
 }
 
 .cpiDiv1 {
@@ -94,10 +142,18 @@ main {
   background: #09090a;
 }
 
+.assetsDiv1:hover,
+.yieldsDiv1:hover,
+.cpiDiv1:hover {
+  box-shadow: 4px 4px 4px 4px rgb(58, 28, 28)
+}
+
 .bankingDiv1,
 .fiscalDiv1 {
   display: flex;
-  border: 1px solid black;
+  border: 1px solid #3b5049;
+  border-radius: 5px;
+  margin: 0px 24px 0px 0px;
 }
 
 .bankingDiv1 {
@@ -111,6 +167,19 @@ main {
   background: rgb(15, 17, 31);
 }
 
+@media screen and (max-width: 540px) {
+  .bankingDiv1,
+  .fiscalDiv1 {
+    width: 300px;
+    height: 400px;
+  }
+}
+
+.bankingDiv1:hover,
+.fiscalDiv1:hover {
+  box-shadow: 4px 4px 4px 4px rgb(58, 24, 24)
+}
+
 .assetsArticle,
 .yieldArticle,
 .cpiArticle,
@@ -118,5 +187,26 @@ main {
 .fiscalArticle {
   display: block;
   white-space: nowrap;
+  text-overflow: ellipsis;
   overflow: hidden;
+}
+
+.assetsArticle:hover {
+  animation: 100s infinite linear;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 75px;
+  color: rgb(238, 227, 227);
+  font-weight: bolder;
+  text-shadow: 1px 1px 10px rgb(102, 38, 38);
+}
+
+.footerDiv {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }

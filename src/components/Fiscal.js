@@ -10,18 +10,30 @@ function Fiscal(props) {
                 <h2>Fiscal</h2>
                 <div className='fiscalDiv2'>
                     <ul className='fiscalUl'>
-                        <span>Debt:GDP</span>
-                        <li className='fiscalLi'> <span className='insideLiSpan1'> <b>Current:</b> {props.apiData[28].debtGdp1}%</span> <b>Previous Month:</b> {props.apiData[29].debtGdp2}%</li>
+                        <h3>Debt:GDP</h3>
+                        <li className='fiscalLi'> <span className='insideLiSpan1'> <b>Current:</b> {props.apiData[42].debtGdp1}%</span>
+                            <span className='insideLiSpan1'><b>Previous Month:</b> {props.apiData[43].debtGdp2}%</span>
+                            <b>Previous Year:</b> {props.apiData[44].debtGdp3}%
+                        </li>
 
-                        <span>Trade Balance</span>
-                        <li className='fiscalLi'><span className='insideLiSpan1'> <b>Current:</b> ${props.apiData[30].tradeBal1}</span> <b>Previous Month:</b> ${props.apiData[31].tradeBal2}</li>
+                        <h3>Trade Balance</h3>
+                        <li className='fiscalLi'><span className='insideLiSpan1'> <b>Current:</b> ${props.apiData[45].tradeBal1}</span>
+                            <span className='insideLiSpan1'><b>Previous Month:</b> ${props.apiData[46].tradeBal2}</span>
+                            <b>Previous Year:</b> ${props.apiData[47].tradeBal3}
+                        </li>
 
-                        <span>Monthly Surplus/Deficit</span>
-                        <li className='fiscalLi'><span className='insideLiSpan1'> <b>Current:</b> ${props.apiData[32].sod1}</span> <b>Previous Month:</b> ${props.apiData[33].sod2}</li>
+                        <h3>Monthly Surplus/Deficit</h3>
+                        <li className='fiscalLi'><span className='insideLiSpan1'> <b>Current:</b> ${props.apiData[48].sod1}</span>
+                            <span className='insideLiSpan1'><b>Previous Month:</b> ${props.apiData[49].sod2}</span>
+                            <b>Previous Year:</b> ${props.apiData[50].sod3}
+                        </li>
 
-                        <span>GDP</span>
-                        <li className='fiscali'><span className='insideLiSpan1'> <b>Current:</b> ${props.apiData[34].gdp1}</span> <b>Previous Month:</b> ${props.apiData[35].gdp2}</li>
-                        {/* <img src="https://fred.stlouisfed.org/graph/fredgraph.png?g=KvuD" alt="" /> */}
+                        <h3>GDP</h3>
+                        <li className='fiscali'><span className='insideLiSpan1'> <b>Current:</b> ${props.apiData[51].gdp1}</span>
+                            <span className='insideLiSpan1'><b>Previous Month:</b> ${props.apiData[52].gdp2}</span>
+                            <b>Previous Year:</b> ${props.apiData[53].gdp3}
+                        </li>
+
                     </ul>
                 </div>
             </article>

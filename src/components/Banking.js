@@ -10,18 +10,41 @@ function Banking(props) {
                 <h2>Banking</h2>
                 <div className='bankingDiv2'>
                     <ul className='bankingUl'>
-                        <span>Fed's Balance Sheet</span>
-                        <li className='bankingLi'><span className='insideLiSpan1'><b>Current:</b> ${props.apiData[16].fedBal1}</span> <b>Previous Month:</b> ${props.apiData[17].fedBal2}</li>
-                        <span>Checking Accounts of Retail</span>
-                        <li className='bankingLi'><span className='insideLiSpan1'><b>Current:</b> ${props.apiData[18].check1}</span> <b>Previous Month:</b> ${props.apiData[19].check2}</li>
-                        <span>M2</span>
-                        <li className='bankingLi'><span className='insideLiSpan1'><b>Current:</b> ${props.apiData[20].m21}</span> <b>Previous Month:</b> {props.apiData[21].m22}</li>
-                        <span>Reverse Repo</span>
-                        <li className='bankingLi'><span className='insideLiSpan1'><b>Current:</b> ${props.apiData[22].rrp1}</span> <b>Previous Month:</b> ${props.apiData[23].rrp2}</li>
-                        <span>Bank Reserves</span>
-                        <li className='bankingLi'><span className='insideLiSpan1'><b>Current:</b> ${props.apiData[24].bankR1}</span> <b>Previous Month:</b> ${props.apiData[25].bankR2}</li>
-                        <span>Federal Funds Rate</span>
-                        <li className='bankingLi'><span className='insideLiSpan1'><b>Current:</b> {props.apiData[26].ffr1}%</span> <b>Previous Month:</b> {props.apiData[27].ffr2}%</li>
+                        <h3>Fed's Balance Sheet</h3>
+                        <li className='bankingLi'><span className='insideLiSpan1'><b>Current:</b> ${props.apiData[24].fedBal1}</span>
+                            <span className='insideLiSpan1'><b>Previous Month:</b> ${props.apiData[25].fedBal2}</span>
+                            <b>Previous Year:</b> ${props.apiData[26].fedBal3}
+                        </li>
+
+                        <h3>Retail Checking Accounts</h3>
+                        <li className='bankingLi'><span className='insideLiSpan1'><b>Current:</b> ${props.apiData[27].check1}</span>
+                            <span className='insideLiSpan1'><b>Previous Month:</b> ${props.apiData[28].check2}</span>
+                            <b>Previous Year:</b> ${props.apiData[29].check3}
+                        </li>
+
+                        <h3>M2</h3>
+                        <li className='bankingLi'><span className='insideLiSpan1'><b>Current:</b> ${props.apiData[30].m21}</span>
+                            <span className='insideLiSpan1'><b>Previous Month:</b> {props.apiData[31].m22}</span>
+                            <b>Previous Year:</b> {props.apiData[32].m23}
+                        </li>
+
+                        <h3>Reverse Repo</h3>
+                        <li className='bankingLi'><span className='insideLiSpan1'><b>Current:</b> ${props.apiData[33].rrp1}</span>
+                            <span className='insideLiSpan1'><b>Previous Month:</b> ${props.apiData[34].rrp2}</span>
+                            <b>Previous Year:</b> ${props.apiData[35].rrp3}
+                        </li>
+
+                        <h3>Bank Reserves</h3>
+                        <li className='bankingLi'><span className='insideLiSpan1'><b>Current:</b> ${props.apiData[36].bankR1}</span>
+                            <span className='insideLiSpan1'><b>Previous Month:</b> ${props.apiData[37].bankR2}</span>
+                            <b>Previous Year:</b> ${props.apiData[38].bankR3}
+                        </li>
+
+                        <h3>Federal Funds Rate</h3>
+                        <li className='bankingLi'><span className='insideLiSpan1'><b>Current:</b> {props.apiData[39].ffr1}%</span>
+                            <span className='insideLiSpan1'><b>Previous Month:</b> {props.apiData[40].ffr2}%</span>
+                            <b>Previous Year:</b> {props.apiData[41].ffr3}%
+                        </li>
                     </ul>
                 </div>
             </article>
