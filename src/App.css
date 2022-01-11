@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Source+Code+Pro:wght@200&display=swap');
 
-
 .divHeader {
   padding: 20px;
   width: 100%;
@@ -25,26 +24,65 @@ h3 {
   color: #54AB57;
   font-size: 17px;
   margin-bottom: 8px;
+  margin-left: 1rem;
+
 }
 
 .insideLiSpan1 {
   font-weight: normal;
-  font-size: 15px;
   color: rgb(218, 213, 213);
   margin: 0px 13px 0px 0px;
+}
+
+b {
+  font-size: 15px;
 }
 
 ul {
   list-style-type: none;
   padding: 0px;
-  margin-left: 1rem;
 }
 
 li {
   font-size: 14.5px;
   color: rgb(218, 213, 213);
-  border-bottom: 1px solid #585665;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+li:hover {
+  animation: animatebanner1 20s infinite linear;
+}
+
+@keyframes animatebanner1 {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  50% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+
+  50.2% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  50.3% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100);
+    opacity: 1;
+  }
 }
 
 body {
@@ -80,13 +118,6 @@ main {
   flex-grow: 1;
 }
 
-@media screen and (max-width: 540px) {
-  .topSection,
-  .bottomSection {
-    width: 600px;
-  }
-}
-
 .topSection {
   display: flex;
   justify-content: space-around;
@@ -98,12 +129,6 @@ main {
   justify-content: space-around;
 }
 
-@media screen and (max-width: 540px){
-  .topSection {
-    justify-content: space-evenly;
-  }
-}
-
 .assetsDiv1,
 .yieldsDiv1,
 .cpiDiv1 {
@@ -113,24 +138,10 @@ main {
   border: 1px solid #3b5049;
 }
 
-@media screen and (max-width: 540px) {
-  .assetsDiv1,
-  .yieldsDiv1,
-  .cpiDiv1 {
-    display: flex;
-    width: 170px;
-    height: 300px;
-    border-radius: 5px;
-    border: 1px solid #3b5049;
-  }
-}
-
-
 .assetsDiv1 {
   margin-left: 0px;
   background: #0f0f11;
 }
-
 
 .yieldsDiv1 {
   margin-left: 20px;
@@ -167,14 +178,6 @@ main {
   background: rgb(15, 17, 31);
 }
 
-@media screen and (max-width: 540px) {
-  .bankingDiv1,
-  .fiscalDiv1 {
-    width: 300px;
-    height: 400px;
-  }
-}
-
 .bankingDiv1:hover,
 .fiscalDiv1:hover {
   box-shadow: 4px 4px 4px 4px rgb(58, 24, 24)
@@ -191,8 +194,9 @@ main {
   overflow: hidden;
 }
 
-.assetsArticle:hover {
-  animation: 100s infinite linear;
+.listDiv {
+  border-bottom: 1px solid #585665;
+  margin: 1rem;
 }
 
 footer {

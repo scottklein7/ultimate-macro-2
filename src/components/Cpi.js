@@ -11,16 +11,20 @@ export default function Cpi(props) {
                 <div className='cpiDiv'>
                     <ul className='cpiUl'>
                         <h3>CPI</h3>
-                        <li className='cpiLi'><span className='insideLiSpan1'><b>Current:</b> {props.apiData[18].cpi1}</span>
-                            <span className='insideLiSpan1'><b>Previous Month:</b> {props.apiData[19].cpi2}</span>
-                            <b>Previous Year:</b> {props.apiData[20].cpi3}
-                        </li>
+                        <div className="listDiv">
+                            <li className='cpiLi'><span className='insideLiSpan1'><b>Current:</b> {props.apiData[18].cpi1}</span>
+                                <span className='insideLiSpan1'><b>Previous Month:</b> {props.apiData[19].cpi2}</span>
+                                <b>Previous Year:</b> {props.apiData[20].cpi3}
+                            </li>
+                        </div>
 
                         <h3>PPI</h3>
-                        <li className='cpiLi'><span className='insideLiSpan1'><b>Current:</b> {props.apiData[21].ppi1}</span>
-                            <span className='insideLiSpan1'><b>Previous Month:</b> {props.apiData[22].ppi2}</span>
-                            <b>Previous Year:</b> {props.apiData[23].ppi3}
-                        </li>
+                        <div className="listDiv">
+                            <li className='cpiLi'><span className='insideLiSpan1'><b>Current:</b> {props.apiData[21].ppi1}</span>
+                                <span className='insideLiSpan1'><b>Previous Month:</b> {props.apiData[22].ppi2}</span>
+                                <b>Previous Year:</b> {props.apiData[23].ppi3}
+                            </li>
+                        </div>
                     </ul>
                 </div>
             </article>
